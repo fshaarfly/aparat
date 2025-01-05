@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2024 at 06:03 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Waktu pembuatan: 06 Jan 2025 pada 00.09
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `otp_lupa`
+-- Struktur dari tabel `otp_lupa`
 --
 
 CREATE TABLE `otp_lupa` (
@@ -36,7 +36,7 @@ CREATE TABLE `otp_lupa` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `otp_register`
+-- Struktur dari tabel `otp_register`
 --
 
 CREATE TABLE `otp_register` (
@@ -46,16 +46,17 @@ CREATE TABLE `otp_register` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `otp_register`
+-- Dumping data untuk tabel `otp_register`
 --
 
 INSERT INTO `otp_register` (`nomor`, `otp`, `waktu`) VALUES
-('6283161579431', '196056', '1734870458');
+('6283161579431', '196056', '1734870458'),
+('hahhaahha', '271116', '1736062525');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `profile`
+-- Struktur dari tabel `profile`
 --
 
 CREATE TABLE `profile` (
@@ -70,17 +71,18 @@ CREATE TABLE `profile` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `profile`
+-- Dumping data untuk tabel `profile`
 --
 
 INSERT INTO `profile` (`user_id`, `profile_image`, `nama_lengkap`, `nim`, `tahun_ajaran`, `semester`, `jurusan`, `prodi`) VALUES
 (7, 'uploads/1734868720_6767fef059dbc.png', 'Fasha Ar-Rafly', '4342411071', '2024-2025', 'Semester 1', 'Informatika', 'Teknologi Rekayasa Perangkat Lunak'),
-(13, 'uploads/1735070256_676b12307498d.png', 'Gojo Satoru', '', '', '', '', '');
+(13, 'uploads/1735070256_676b12307498d.png', 'Gojo Satoru', '', '', '', '', ''),
+(15, 'uploads/1736064994_677a3fe2a48e9.png', 'Kharlos Daylo Saut Silaban', '4342411073', '2024', '1', 'Teknik Informatika', 'TRPL');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `surat`
+-- Struktur dari tabel `surat`
 --
 
 CREATE TABLE `surat` (
@@ -100,16 +102,23 @@ CREATE TABLE `surat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `surat`
+-- Dumping data untuk tabel `surat`
 --
 
 INSERT INTO `surat` (`id`, `user_id`, `nama`, `nim`, `tahun_ajaran`, `jurusan`, `prodi`, `semester`, `alasan`, `jenis_surat`, `status_surat`, `alasan_penolakan`, `tanggal_buat`) VALUES
-(69, 7, 'Fasha Ar-Rafly', '4342411071', '2024-2025', 'Informatika', 'Teknologi Rekayasa Perangkat Lunak', 'Semester 1', 'asdasd', 'SKM', 'Pending', '', '2024-12-25');
+(69, 7, 'Fasha Ar-Rafly', '4342411071', '2024-2025', 'Informatika', 'Teknologi Rekayasa Perangkat Lunak', 'Semester 1', 'asdasd', 'SKM', 'Ditolak', 'alasan kamu kurang meyakinkan', '2024-12-25'),
+(70, 7, 'Fasha Ar-Rafly', '4342411071', '2024-2025', 'Informatika', 'Teknologi Rekayasa Perangkat Lunak', 'Semester 1', 'ASDASDASD', 'SCA', 'Diterima', '', '2025-01-04'),
+(71, 15, 'kharlos daylo saut silaban', '4342411073', '2024', 'Teknik Informatika', 'TRPL', '1', 'surat keterangan Mahasiswa', 'SKM', 'Diterima', '', '2025-01-04'),
+(74, 17, 'nurul khotimah', '4342411066', '2024-2025', 'informatika', 'TRPL', 'Semester 1', 'mahasiswa', 'SKM', 'Diterima', '', '2025-01-04'),
+(75, 17, 'nurul khotimah', '4342411066', '2024-2025', 'informatika', 'TRPL', 'Semester 1', 'mahasiswa', 'SCA', 'Diterima', '', '2025-01-04'),
+(76, 17, 'nurul khotimah', '4342411066', '2024-2025', 'informatika', 'TRPL', 'Semester 1', 'mahasiswa', 'TAS', 'Ditolak', 'Alasan dan keaadaan yang kamu sampaikan tidak sesuai', '2025-01-04'),
+(77, 17, 'nurul khotimah', '4342411066', '2024-2025', 'informatika', 'TRPL', 'Semester 1', 'mahasiswa', 'LKA', 'Diterima', '', '2025-01-04'),
+(78, 15, 'kharlos daylo saut silaban', '4342411073', '2024', 'Teknik Informatika', 'TRPL', '1', 'surat keterangan Mahasiswa', 'SKM', 'Ditolak', 'Kamu sudah memberikan surat yang sama sebelum nya dalam kurung waktu yang dekat\r\n', '2025-01-05');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -123,53 +132,55 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `nomor`, `created_at`, `role`, `remember_token`) VALUES
-(7, 'fshaarfly', 'bb4c2a154307e4f64212bea38c8ea47834148dd07c8e5378723014b8202886a4', '6283161579431', '2024-12-22 04:25:35', 0, '4df0112436ae1c88d9f47777ea6da968'),
-(14, 'admin123', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', '083161579431', '2024-12-25 03:35:00', 1, 'de6a390a72281a240ace70b7001779fe');
+(7, 'fshaarfly', 'bb4c2a154307e4f64212bea38c8ea47834148dd07c8e5378723014b8202886a4', '6283161579431', '2024-12-22 04:25:35', 0, 'faea4bdae28d6528022ec7b17eae22e9'),
+(14, 'admin123', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', '083161579431', '2024-12-25 03:35:00', 1, '60c2831dc7cc0b1aace8afd735ac963d'),
+(15, 'kharlos', '1a13baa0becc061d3887ed48bdc33f0ce119f47670a79f2fe7717db34e46e814', '0895362070050', '2025-01-04 07:02:11', 0, NULL),
+(17, 'nurulkhotimah', '7776dffa87516251c0d1bb1a321c0d5c22e30cea75a3db1018218c621f6334c4', '082174623843', '2025-01-04 23:06:08', 0, NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `surat`
+-- Indeks untuk tabel `surat`
 --
 ALTER TABLE `surat`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `surat`
+-- AUTO_INCREMENT untuk tabel `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `surat`
+-- Ketidakleluasaan untuk tabel `surat`
 --
 ALTER TABLE `surat`
   ADD CONSTRAINT `surat_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
