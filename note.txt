@@ -1,0 +1,5 @@
+cd c:/xampp/htdocs/aparat
+php -S localhost:3001
+ngrok http localhost:3001
+
+to do list:
