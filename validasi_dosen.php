@@ -63,8 +63,8 @@ if (isset($_POST['action'])) {
     $data = [
       'target' => $nomor,
       'message' => implode(PHP_EOL, [
-        "Surat Anda dengan ID $id telah ditolak karena $alasan_penolakan",
-        "'ini link website'"
+        "Surat Anda Dengan ID $id Telah *DITOLAK*",
+        "'karena $alasan_penolakan'"
       ]),
     ];
     curl_setopt($curl, CURLOPT_HTTPHEADER, array("Authorization: VADszheBGjj9RcrbXdpb"));
@@ -105,8 +105,7 @@ if (isset($_POST['action'])) {
     $data = [
       'target' => $nomor,
       'message' => implode(PHP_EOL, [
-        "Surat Anda dengan ID $id telah diterima",
-        "'ini link website'"
+        "Surat Anda Dengan ID $id Telah *DITERIMA*"
       ]),
     ];
     curl_setopt($curl, CURLOPT_HTTPHEADER, array("Authorization: VADszheBGjj9RcrbXdpb"));
